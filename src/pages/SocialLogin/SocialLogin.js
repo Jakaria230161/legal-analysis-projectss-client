@@ -45,10 +45,20 @@ const SocialLogin = () => {
     }
 
     return (
-        <div>
-            <p className='text-center'> <small>Social Login</small> </p>
-            <p onClick={handleGoogleSignIn} className='text-center'> <button className='btn btn-ghost'><FcGoogle className='h-8 w-8'></FcGoogle></button> </p>
-        </div>
+      <div>
+        <p className="text-center">
+          {" "}
+          <small>
+            <span className=' py-2 px-4 text-white font-semibold bg-red-500 border rounded-lg'>Login with Google</span>
+          </small>{" "}
+        </p>
+        <p onClick={handleGoogleSignIn} className="text-center">
+          {" "}
+          <button className="btn btn-ghost">
+            <FcGoogle className="h-8 w-8"></FcGoogle>
+          </button>{" "}
+        </p>
+      </div>
     );
 };
 
