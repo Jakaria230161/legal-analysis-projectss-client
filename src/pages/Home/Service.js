@@ -17,7 +17,7 @@ const Service = () => {
             <p className="text-2xl font-bold text-orange-600">
               WHAT WE ARE EXPERT AT
             </p>
-            <h2 className="text-5xl font-semibold">Legal Practice Areas</h2>
+            <h2 className="text-5xl mb-4 font-semibold">Legal Practice Areas</h2>
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts. Separated
