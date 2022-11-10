@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SocialLogin = () => {
 
@@ -25,7 +25,7 @@ const SocialLogin = () => {
                 console.log(currentUser);
 
                 // //JWT Token
-                fetch('https://service-review-server-farvez999.vercel.app/jwt',
+                fetch('http://localhost:5000/jwt',
                     {
                         method: 'POST',
                         headers: {

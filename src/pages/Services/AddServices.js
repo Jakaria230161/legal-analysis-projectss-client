@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const AddServices = () => {
@@ -26,7 +26,7 @@ const AddServices = () => {
             time: new Date().getTime()
         }
 
-        fetch('https://service-review-server-farvez999.vercel.app/services', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

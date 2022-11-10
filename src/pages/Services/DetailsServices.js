@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-import toast, { Toaster } from 'react-hot-toast';
 import ReviewDetailsService from './ReviewDetailsService';
 
 
@@ -20,7 +20,7 @@ const DetailsServices = () => {
 
 
     useEffect(() => {
-        fetch(`https://service-review-server-farvez999.vercel.app/reviews/${_id}`)
+        fetch(`http://localhost:5000/reviews/${_id}`)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)
@@ -28,7 +28,7 @@ const DetailsServices = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`https://service-review-server-farvez999.vercel.app/${_id}`)
+        fetch(`http://localhost:5000/${_id}`)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)
@@ -59,7 +59,7 @@ const DetailsServices = () => {
 
 
         ///Create a review post
-        fetch('https://service-review-server-farvez999.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const DetailsServices = () => {
 
 
         ///Show a review post
-        fetch("https://service-review-server-farvez999.vercel.app/reviews")
+        fetch("http://localhost:5000/reviews")
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)

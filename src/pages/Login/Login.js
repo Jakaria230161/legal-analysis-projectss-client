@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import img from '../../assets/login.svg'
+import img from '../../assets/login.svg';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -33,7 +33,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 // //JWT Token
-                fetch('https://service-review-server-farvez999.vercel.app/jwt',
+                fetch('http://localhost:5000/jwt',
                     {
                         method: 'POST',
                         headers: {
@@ -81,7 +81,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
-                    <p className='text-center'>New to Genius Car <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
+                    <p className='text-center'>New to Legal Analysis? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
                     <div className='mt-5'>
                         <SocialLogin></SocialLogin>
                     </div>
