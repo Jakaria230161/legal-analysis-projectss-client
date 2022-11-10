@@ -1,8 +1,8 @@
-# Cute Cut Hair Studio Application Repository
-We provide tools for travel professionals to create experiences their customers love. The Cute Cut Hair Studio is centrally located and a short walk from many of the area’s most popular hotels and visitor hot spots. With the narrow historic roads of the French Quarter, walking is usually not only the quickest route but certainly has the least impact on our environment.
+# Legal Analysis Application Repository
+We provide tools for travel professionals to create experiences their client love. The Legal Analysis is centrally located and a short walk from many of the area’s most popular hotels and visitor hot spots. With the narrow historic roads of the French Quarter, walking is usually not only the quickest route but certainly has the least impact on our environment.
 
 ## Live Link
-Cute Cut Hair Studio Live Demo Link -> [Cute Cut Hair Studio](https://travel-tips-a4437.web.app/).
+Legal Analysis Live Demo Link -> [Legal Analysis]().
 
 ## Context API
 Documentation Link -> [Context API](https://reactjs.org/docs/context.html#api)
@@ -22,3 +22,5 @@ Cors -> [Cors](https://www.npmjs.com/package/cors)
 
 ## Other Resources
 JWT -> [JWT](https://github.com/auth0/node-jsonwebtoken)
+
+// Thank you programming hero teams
