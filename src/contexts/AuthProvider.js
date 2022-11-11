@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
+// authProvider
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
