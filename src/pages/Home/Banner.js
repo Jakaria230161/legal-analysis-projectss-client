@@ -68,3 +68,5 @@ const Banner = () => {
 };
 
 export default Banner;
+
+// thank you so much 
