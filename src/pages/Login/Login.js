@@ -33,7 +33,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 // //JWT Token
-                fetch('http://localhost:5000/jwt',
+                fetch('https://assignment11-server-side-iota.vercel.app/jwt',
                     {
                         method: 'POST',
                         headers: {

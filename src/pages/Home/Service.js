@@ -6,7 +6,7 @@ const Service = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesHome')
+        fetch('https://assignment11-server-side-iota.vercel.app/servicesHome')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);

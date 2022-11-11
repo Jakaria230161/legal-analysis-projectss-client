@@ -26,7 +26,7 @@ const AddServices = () => {
             time: new Date().getTime()
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://assignment11-server-side-iota.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

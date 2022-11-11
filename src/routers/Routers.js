@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <DetailsServices></DetailsServices>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment11-server-side-iota.vercel.app/services/${params.id}`)
             },
             {
                 path: '/blog',

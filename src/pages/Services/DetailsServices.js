@@ -20,7 +20,7 @@ const DetailsServices = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://assignment11-server-side-iota.vercel.app/reviews/${_id}`)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)
@@ -28,7 +28,7 @@ const DetailsServices = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/${_id}`)
+        fetch(`https://assignment11-server-side-iota.vercel.app/${_id}`)
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)
@@ -59,7 +59,7 @@ const DetailsServices = () => {
 
 
         ///Create a review post
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://assignment11-server-side-iota.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const DetailsServices = () => {
 
 
         ///Show a review post
-        fetch("http://localhost:5000/reviews")
+        fetch("https://assignment11-server-side-iota.vercel.app/reviews")
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data)
