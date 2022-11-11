@@ -6,9 +6,9 @@ const Service = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://assignment11-server-side-iota.vercel.app/servicesHome')
-            .then(res => res.json())
-            .then(data => setServices(data))
+        fetch("https://assignment11-server-side-iota.vercel.app/servicesHome")
+          .then((res) => res.json())
+          .then((data) => setServices(data));
     }, []);
     return (
       <div className="mb-20 mt-12">

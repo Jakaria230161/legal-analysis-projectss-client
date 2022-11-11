@@ -21,19 +21,19 @@ const DetailsServices = () => {
 
     useEffect(() => {
         fetch(`https://assignment11-server-side-iota.vercel.app/reviews/${_id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setUsers(data)
-            });
+          .then((res) => res.json())
+          .then((data) => {
+            setUsers(data);
+          });
     }, []);
 
-    useEffect(() => {
-        fetch(`https://assignment11-server-side-iota.vercel.app/${_id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setUsers(data)
-            });
-    }, [depend]);
+    // useEffect(() => {
+    //     fetch(`https://assignment11-server-side-iota.vercel.app/${_id}`)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setUsers(data)
+    //         });
+    // }, [depend]);
 
 
 
@@ -59,32 +59,31 @@ const DetailsServices = () => {
 
 
         ///Create a review post
-        fetch('https://assignment11-server-side-iota.vercel.app/reviews', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(addReview)
+        fetch("https://assignment11-server-side-iota.vercel.app/reviews", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(addReview),
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.acknowledged) {
-                    toast.success('Add Service successfully')
-                    // alert('Add Service successfully')
-                    form.reset();
-
-                }
-            })
-            .catch(er => console.error(er));
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.acknowledged) {
+              toast.success("Add Service successfully");
+              // alert('Add Service successfully')
+              form.reset();
+            }
+          })
+          .catch((er) => console.error(er));
 
 
         ///Show a review post
         fetch("https://assignment11-server-side-iota.vercel.app/reviews")
-            .then((res) => res.json())
-            .then((data) => {
-                setUsers(data)
-            });
+          .then((res) => res.json())
+          .then((data) => {
+            setUsers(data);
+          });
 
         setDepend(!depend)
 

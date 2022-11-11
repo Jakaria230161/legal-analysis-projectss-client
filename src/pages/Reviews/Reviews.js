@@ -15,19 +15,21 @@ const Reviews = () => {
         if (!user?.email) {
             return;
         }
-        fetch(`https://service-review-server-omega.vercel.app/reviews?email=${user?.email}`, {
+        fetch(
+          `https://assignment11-server-side-iota.vercel.app/reviews?email=${user?.email}`,
+          {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`
-
+              authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+          .then((res) => {
+            if (res.status === 401 || res.status === 403) {
+              logOut();
             }
-        })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    logOut()
-                }
-                return res.json()
-            })
-            .then(data => setReviews(data))
+            return res.json();
+          })
+          .then((data) => setReviews(data));
     }, [user?.email, logOut]);
 
 
@@ -36,20 +38,23 @@ const Reviews = () => {
     const handelToDelete = (id) => {
         const proceed = window.confirm('are you sure, ou want to delete to this order');
         if (proceed) {
-            fetch(`https://service-review-server-omega.vercel.app/delete/${id}`, {
-                method: 'DELETE',
-
-            })
-                .then(res => res.json())
-                .then(data => {
-
-                    if (data.deletedCount > 0) {
-                        toast.success('deleted successfully.');
-                        const remainingOrder = reviews.filter(order => order._id !== id);
-                        console.log(remainingOrder);
-                        setReviews(remainingOrder);
-                    }
-                });
+            fetch(
+              `https://assignment11-server-side-iota.vercel.app/delete/${id}`,
+              {
+                method: "DELETE",
+              }
+            )
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.deletedCount > 0) {
+                  toast.success("deleted successfully.");
+                  const remainingOrder = reviews.filter(
+                    (order) => order._id !== id
+                  );
+                  console.log(remainingOrder);
+                  setReviews(remainingOrder);
+                }
+              });
 
         }
     }

@@ -18,20 +18,23 @@ const EditReviews = () => {
         }
 
 
-        fetch(`https://service-review-server-omega.vercel.app/review/${data._id}`, {
-            method: 'PUT',
+        fetch(
+          `https://assignment11-server-side-iota.vercel.app/review/${data._id}`,
+          {
+            method: "PUT",
             headers: {
-                'content-type': 'application/json'
+              "content-type": "application/json",
             },
             body: JSON.stringify(details),
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    toast.success('your information is successful updated');
-                    Navigate('/reviews');
-                }
-            });
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount > 0) {
+              toast.success("your information is successful updated");
+              Navigate("/reviews");
+            }
+          });
 
     }
 

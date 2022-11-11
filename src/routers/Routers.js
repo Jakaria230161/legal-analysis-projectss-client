@@ -13,53 +13,66 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
         path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-                path: "/",
-                element: <Home></Home>
-            },
-            {
-                path: "/login",
-                element: <Login></Login>
-            },
-            {
-                path: "/signup",
-                element: <SignUp></SignUp>
-            },
-            {
-                path: "/services",
-                element: <AllServices></AllServices>,
-            },
-            {
-                path: '/services/:id',
-                element: <DetailsServices></DetailsServices>,
-                loader: ({ params }) => fetch(`https://assignment11-server-side-iota.vercel.app/services/${params.id}`)
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>
-            },
-            {
-                path: '/addServices',
-                element: <PrivateRouter><AddServices></AddServices></PrivateRouter>
-            },
-            {
-                path: '/reviews',
-                element: <PrivateRouter><Reviews></Reviews></PrivateRouter>
-            },
-            {
-                path: '/reviewedit/:id',
-                element: <EditReviews></EditReviews>,
-                loader: ({ params }) => fetch(`https://service-review-server-omega.vercel.app/review/${params.id}`),
-            },
-
-        ]
-    },
-    {
-        path: "*",
-        element: <ErrorPage></ErrorPage>
-    },
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/services",
+        element: <AllServices></AllServices>,
+      },
+      {
+        path: "/services/:id",
+        element: <DetailsServices></DetailsServices>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment11-server-side-iota.vercel.app/services/${params.id}`
+          ),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/addServices",
+        element: (
+          <PrivateRouter>
+            <AddServices></AddServices>
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/reviews",
+        element: (
+          <PrivateRouter>
+            <Reviews></Reviews>
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/reviewedit/:id",
+        element: <EditReviews></EditReviews>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment11-server-side-iota.vercel.app/review/${params.id}`
+          ),
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
+  },
 ]);
