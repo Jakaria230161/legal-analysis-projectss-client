@@ -3,7 +3,7 @@ import React from 'react';
 const Banner = () => {
     return (
       <div className="carousel w-full h-full">
-        <div id="slide1" className="carousel-item relative w-full mt-auto">
+        <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://img.freepik.com/free-photo/gavel-with-books-old-wooden-desk_93675-129543.jpg?size=626&ext=jpg"
             alt=""
