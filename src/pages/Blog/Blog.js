@@ -68,3 +68,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
+// Thanks a lot programming heres
